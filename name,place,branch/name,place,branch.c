@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main()
 {
-    printf("MY NAME IS PRANAV \nI AM FROM JAMMU \nI AM IN IT BRANCH");
+    printf("MY NAME IS XXXXXX \nI AM FROM XXXXX \nI AM IN XXXXX BRANCH");
 
 }
