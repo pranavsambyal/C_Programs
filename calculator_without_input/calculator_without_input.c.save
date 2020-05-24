@@ -1,0 +1,28 @@
+#include<stdio.h>
+int addi(int,int);
+int main()
+{
+    int a,b,c;
+    int f=0;
+    while(f==0)
+    {
+        printf("ENTER THE NUMBERS\n");
+        scanf("%d %d",&a,&b);
+        addi(a,b);
+        c=a-b;
+        printf("DIFFERENCE IS %d\n",c);
+        c=a/b;
+        printf("DIVISION IS %d\n",c);
+        c=a*b;
+        printf("PRODUCT IS %d\n",c);
+        c=a%b;
+        printf("REMAINDER IS %d\n",c);
+        printf("------------------------------------------------------------------------------------------------------------------------");
+
+    }
+}
+int addi(int x ,int y)
+{
+    c=a+b;
+        printf("SUM IS %d\n",c);
+}

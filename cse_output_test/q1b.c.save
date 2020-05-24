@@ -1,0 +1,8 @@
+#include<stdio.h>
+int main()
+{int a=9,b=0,c=0;
+if(!a<10&&!b||c)
+    printf("c in depth %d\n",!a<10);
+else
+    printf("see in depth\n");
+}

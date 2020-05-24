@@ -1,0 +1,12 @@
+#include<stdio.h>
+#define PI 3.14
+float area(float radius);
+
+float main()
+{  float area,radius;
+printf("enter radius\n");scanf("%f",&radius);
+area(radius);
+    }float area(float radius)
+    {
+      float a,r;
+      a=PI   }

@@ -1,0 +1,10 @@
+#include<stdio.h>
+#include<ctype.h>
+int main()
+{char a;
+printf("enter the characters\n");
+getchar(a);
+if(isupper(a))
+{a=tolower(a)};
+else
+}

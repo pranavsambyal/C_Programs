@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main()
+{int a,char b,c[20];
+printf(" Enter the int ,char and string in the same order ");
+scanf("%d %c %s",&a,&b,&c);
+printf("The int entered is %d\n char is %c \n string is %S ");
+
+
+}
