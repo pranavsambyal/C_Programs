@@ -15,7 +15,7 @@ struct student //structure declaration
 int main()
 {
     struct student stud[10];
-    for (int x = 0; x < 2; x++)
+    for (int x = 0; x < 10; x++)
 
     {
         char temp_name[100], temp_address[100];
@@ -24,20 +24,15 @@ int main()
         scanf("%d", &stud[x].roll_no);
         printf("Name    :");
         scanf("%s", &temp_name);
-        printf("Address :");
-        scanf("%s", &temp_address);
         stud[x].name = (char *)malloc(strlen(temp_name) * sizeof(char)); //dynamic allocation
         strcpy(stud[x].name, temp_name);
         stud[x].address = (char *)malloc(strlen(temp_address) * sizeof(char)); //dynamic allocation
-        strcpy(stud[x].address, temp_address);
     }
     printf("-------------------------------------Printing Entered Data--------------------------------------- \n\n\n");
-    for (int x = 0; x < 2; x++)
+    for (int x = 0; x < 10; x++)
     {
-        printf("%d", x);
         printf("Roll Number : %d\n", stud[x].roll_no);
         printf("Name        : %s\n", stud[x].name);
-        printf("Address     : %s\n", stud[x].address);
         printf("&Address    : %d\n\n", &stud[x].address);
         
     }
