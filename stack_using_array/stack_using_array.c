@@ -1,35 +1,33 @@
 #include <stdio.h>
-struct stack
-{
-    int data[10];
-    int top;
-
-};
-void push(struct stack,int);
-void pop(struct stack);
-
-
+#include <string.h>
+void push(int);
+void pop();
+void view();
+int data[10], top = -1;
 
 int main()
 {
-    int loop = 1;int temp;
-    struct stack stack1 ={.top=-1};
+    int loop = 1;
+    int temp, sw;
     while (loop == 1)
     {
-        printf("Choose the following operation:-- \n1->Add element in stack\n2->POP element from stack\n3->Exit\n");
-        scanf("%d",&temp);
-        switch (temp)
+        printf("Choose the following operation:-- \n1->Add element in stack\n2->POP element from stack\n3->View Stack\n4->Exit\n");
+        scanf("%d", &sw);
+        switch (sw)
         {
         case 1:
             printf("Enter element to push\n");
-            scanf("%d",&temp);
-            push(&stack1,temp);
+            scanf("%d", &temp);
+            push(temp);
             break;
         case 2:
-            pop(&stack1);
+            pop();
             break;
         case 3:
-            loop=0;
+            view();
+            break;
+        case 4:
+            loop = 0;
             break;
 
         default:
@@ -37,33 +35,51 @@ int main()
         }
     }
 }
-void push(struct stack stk,int num)
+void push(int num)
+{
+    if (top == -1)
     {
-        if (stk.top == -1)
+        top = 0;
+        data[top] = num;
+        printf("Stack Initialized\n");
+    }
+    else if (top == 9)
+    {
+        printf("Stack Full\n");
+    }
+    else
+    {
+        top++;
+        data[top] = num;
+        printf("%d has been added to Stack\n", num);
+    }
+}
+void pop()
+{
+    if (top == -1)
+    {
+        printf("Stack Uninitialized nothing to POP\n");
+    }
+    else
+    {
+        printf("Element POPED %d\n", data[top--]);
+    }
+}
+void view()
+{
+    for (int x = 9; x >= 0; x--)
+    {
+        if (x == 9)
         {
-            stk.top++;
-            stk.data[stk.top] = num;
-            printf("Stack Initialized\n");
+            printf("---TOP---\n");
         }
-        else if(stk.top == 9)
-        { 
-            printf("Stack Full\n");
-        }
-        else
+        printf("|       |\n");
+        printf("|   %d   |\n", data[x]);
+        printf("|       |\n");
+        printf("---------\n");
+        if (x == 0)
         {
-            stk.top++;
-            stk.data[stk.top] = num;
-            printf("%d has been added to stack",num);
+            printf("-BOTTOM-\n");
         }
     }
-void pop(struct stack stk)
-    {
-        if (stk.top == -1)
-        {
-            printf("Stack Uninitialized nothing to POP\n");
-        }
-        else
-        {
-            printf("Element POPED %d", stk.data[stk.top--]);
-        }
-    }
+}
