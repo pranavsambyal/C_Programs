@@ -74,7 +74,18 @@ void view()
             printf("---TOP---\n");
         }
         printf("|       |\n");
-        printf("|   %d   |\n", data[x]);
+        if (data[x] / 10 == 0)
+        {
+            printf("|   %d   |\n", data[x]);
+        }
+        else if (data[x / 100 == 0])
+        {
+            printf("|   %d  |\n", data[x]);
+        }
+        else if (data[x / 1000 == 0])
+        {
+            printf("|  %d  |\n", data[x]);
+        }
         printf("|       |\n");
         printf("---------\n");
         if (x == 0)
