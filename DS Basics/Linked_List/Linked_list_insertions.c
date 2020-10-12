@@ -63,7 +63,7 @@ int midval()
     if (total % 2 == 0)
         mid = (total / 2) + 1;
     else
-        mid =(total + 1) / 2;
+        mid = (total + 1) / 2;
     return mid;
 }
 int totval()
@@ -85,7 +85,7 @@ void ins_at_loc(int loc)
     if (loc == midval())
         printf("Inserting New Node at MIDDLE\n");
     else
-        printf("Inserting New Node at %d position\n",loc);
+        printf("Inserting New Node at %d position\n", loc);
     int a = 1;
     while (a < loc - 1)
     {
@@ -101,20 +101,27 @@ void view()
     int i = 0;
     printf("Printing LINKED LIST\n");
     struct node *element = head;
-    while (element->next != NULL)
+    while (element != NULL)
     {
         if (i != 0)
         {
-            element = element->next;
+            if (element->next != NULL)
+            {
+                element = element->next;
+            }
+            else
+            {
+                break;
+            }
         }
         if (i % 3 == 0)
         {
             printf("\n");
         }
         if (element->next == NULL)
-            printf("[%d][%d]", element->data, element->next);
+            printf("[%d][%p]", element->data, element->next);
         else
-            printf("[%d][%d]---->", element->data, element->next);
+            printf("[%d][%p]---->", element->data, element->next);
 
         i++;
     }
